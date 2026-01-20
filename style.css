@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(
+        120deg,
+        #0a0a0a,   /* darker black */
+        #b30000,   /* TEDx red */
+        #1a1a1a    /* subtle black at end */
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 20s ease infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    padding: 0 20px; /* some breathing space on sides */
+}
+
+/* ===== Gradient Animation ===== */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ===== Container ===== */
+.container {
+    text-align: center;
+    max-width: 900px; /* limits crowding on big screens */
+}
+
+/* ===== Text Styling ===== */
+.title {
+    font-size: 6rem;       /* bigger */
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.title span {
+    color: #e62b1e;       /* red accent for x */
+}
+
+.subtitle {
+    font-family: 'Poppins', sans-serif; /* subtle change */
+    font-size: 1.8rem;    /* keep same */
+    font-weight: 500;     /* lighter than title */
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+
+
+
+/* ===== Countdown ===== */
+.countdown {
+    font-size: 6rem;       /* bigger */
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+/* ===== Launch Button ===== */
+.launch-btn {
+    padding: 20px 60px;    /* bigger button */
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: transparent;
+    border: 2px solid #e62b1e;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* Disabled initially */
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.launch-btn:hover {
+    background: #e62b1e;
+    color: black;
+}
+
+/* ===== Glow Animation (Button Only) ===== */
+@keyframes redGlow {
+    0% {
+        box-shadow: 0 0 5px #e62b1e;
+    }
+    50% {
+        box-shadow: 0 0 20px #e62b1e;
+    }
+    100% {
+        box-shadow: 0 0 5px #e62b1e;
+    }
+}
+
+.glow-btn {
+    animation: redGlow 1.5s infinite;
+}
